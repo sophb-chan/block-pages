@@ -13,6 +13,10 @@ It should follow the structure of other block pages (following the previous exam
 and you should NOT edit the `index.html` to list the block page.
 That'll be done after the pull request has been merged with `main`.
 
+The contents of the block page must also be censored according to the [Placeholders document](/PLACEHOLDERS.md),
+but that can be done after the pull request is created and before it is merged.
+It's still highly recommended, since you could leak your private information.
+
 ## Method 2
 
 Your issue should have a clear title, like "Block page request: Deledao".
