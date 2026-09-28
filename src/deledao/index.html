@@ -1,0 +1,299 @@
+<html lang="en">
+
+<head>
+	<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="./css/dld.css?v=260130">
+	<script src="./translate-by-data-attr.js"></script>
+	<script src="./category-translation.js"></script>
+	<title>Blocked: https://example.com/</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header style="padding: 20px;">
+			<img style="width: 180px;" src="./images/logo.svg" alt="logo picture">
+			<h1 id="cname">Example School</h1>
+		</header>
+
+		<hr style="clear: left; border-color: #2c7bd1">
+
+		<div class="mainFrame" style="min-width: 300px">
+			<h2>
+				<img src="./images/computerSmall.png" alt="a computer icon">
+				<span style="color: #e8425a; vertical-align: 50%" d-trans-en="&nbsp;&nbsp;Oops…"
+					d-trans-zh-tw="&nbsp;&nbsp;哎呀…">&nbsp;&nbsp;Oops…</span>
+			</h2>
+
+			<div class="notice">
+				<p d-trans-en="There’s nothing to see here. Your
+						&lt;b&gt;&lt;span id=&quot;blocksrc&quot;&gt;&lt;/span&gt;&lt;/b&gt; thinks you should
+						explore a different part of the web at this time." d-trans-zh-tw="這裡沒什麼好看的。 您的
+						&lt;b&gt;&lt;span id=&quot;blocksrc&quot;&gt;&lt;/span&gt;&lt;/b&gt; 覺得您現在應該探索其他網站。">
+					There’s nothing to see here.
+					Your
+					<b>
+						<span id="blocksrc">School</span>
+					</b>
+					thinks you should
+					explore a different part of the web at this time.
+				</p>
+				<p id="gcytp-notice" style="display: none;"
+					d-trans-en="&lt;b&gt;Please refresh the page to close this modal.&lt;/b&gt;"
+					d-trans-zh-tw="&lt;b&gt;請重整頁面以關閉此彈窗。&lt;/b&gt;">
+					<b>Please refresh the page to close this modal.</b>
+				</p>
+				<p>
+					<span id="subtitle" d-trans-en="Website:" d-trans-zh-tw="網站：">Website:</span><br>
+					<span id="website" style="word-wrap: break-word; text-decoration: none;">
+						https://example.com/
+					</span>
+					<br>
+					<span id="subtitle" d-trans-en="Category:" d-trans-zh-tw="類別：">Category:</span><br>
+					<span id="category">Games</span>
+				</p>
+
+				<div id="dynWLform" style="display: none">
+					<p>
+						<b d-trans-en="If you need to access this website for your coursework"
+							d-trans-zh-tw="如果您需要存取此網站以完成您的作業">
+							If you need to access this website for your coursework
+						</b>:
+					</p>
+					<button id="unblockreq" style="margin-left: 0px;
+							width: 230px;
+							height: 36px;
+							border-radius: 8px;
+							color: black;
+							font-size: 17px;" d-trans-en="Ask to unblock" d-trans-zh-tw="要求解除封鎖">
+						Ask to unblock
+					</button>
+					<button id="backToSite" style="
+							margin-left: 0px;
+							width: 230px;
+							height: 36px;
+							border-radius: 8px;
+							color: black;
+							font-size: 17px;
+							display: none;
+						" d-trans-en="Back To Site (Only for dev)" d-trans-zh-tw="Back To Site (Only for dev)">
+						Back To Site (Only for dev)
+					</button>
+					<p id="responseMessage"></p>
+					<p style="margin-top: 30px">
+						<i d-trans-en="If you have questions or concerns about the use of this
+								software on your device, please contact your teacher." d-trans-zh-tw="如果您有任何疑問或關於您裝置上此軟體的使用問題，請聯絡您的老師。">
+							If you have questions or concerns about the use of this
+							software on your device, please contact your teacher.
+						</i>
+					</p>
+				</div>
+				<div id="antiDynWLform" style="display: block">
+					<p>
+						<b d-trans-en="This webpage is not allowed to be unblocked by teachers."
+							d-trans-zh-tw="此網頁不允許由老師解除封鎖">
+							This webpage is not allowed to be unblocked by teachers.
+						</b>
+					</p>
+					<button disabled="" style="margin-left: 0px;
+							width: 230px;
+							height: 36px;
+							border-radius: 8px;
+							color: black;
+							font-size: 17px;" d-trans-en="Ask to unblock" d-trans-zh-tw="要求解除封鎖">
+						Ask to unblock
+					</button>
+				</div>
+				<p id="nodwl" style="display: block; margin-top: 30px;">
+					<i
+						d-trans-en="If you have questions or concerns about the use of this software on your device, please contact your teacher."
+						d-trans-zh-tw="如果您有任何疑問或關於您裝置上此軟體的使用問題，請聯絡您的老師。">
+						If you have questions or concerns about the use of this
+						software on your device, please contact your teacher.
+					</i>
+				</p>
+				<div id="isallowed" style="display: none; margin-top: 30px">
+					<p d-trans-en="Here are the websites that currently allowed:" d-trans-zh-tw="以下是目前允許的網站">
+						Here are the websites that currently allowed:
+					</p>
+					<ul id="allowedlist" style="list-style-type: none; margin-left: 0; padding-left: 0;">
+					</ul>
+				</div>
+				<p id="parentblock" style="display: none; margin-top: 30px" d-trans-en="If you would still like to access this webpage, ask your
+						parents to add this to the list of allowed websites." d-trans-zh-tw="如果您仍然想存取此網頁，請要求您的父母將此網頁加入允許的網站列表">If you
+					would still like to access this webpage, ask your
+					parents to add this to the list of allowed websites.</p>
+			</div>
+		</div>
+		<div class="push"></div>
+	</div>
+	<div class="footer" style="display: none;" id="footer"
+		d-trans-en="Copyright © &lt;span class=&quot;year-insert&quot;&gt;&lt;/span&gt; DLD Technologies Corporation doing business as Deledao. All rights reserved."
+		d-trans-zh-tw="&lt;b&gt; Copyright © &lt;span class=&quot;year-insert&quot;&gt;&lt;/span&gt; &lt;/b&gt; DLD Technologies Corporation doing business as Deledao. 保留一切權利。">
+		Copyright © <span class="year-inserted">2026</span> DLD Technologies Corporation doing business as Deledao. All
+		rights reserved.</div>
+
+	<script>
+		// translateElemnt() from translate-by-data-attr.js
+		translateElemnt();
+		let textTranslationMapping = {
+			'school': { en: 'School', 'zh-TW': '學校' },
+			'parent': { en: 'Parent', 'zh-TW': '家長' },
+			'classroom': { en: 'Classroom', 'zh-TW': '課堂' },
+			'Blocked: ': { en: 'Blocked: ', 'zh-TW': '封鎖: ' }
+		};
+		let _userLang = navigator.language || navigator.userLanguage;
+		if (_userLang !== 'zh-TW')
+			_userLang = 'en';
+
+		document.documentElement.lang = _userLang;
+
+		function _getTranslationText(text) {
+			// categoryTranslation from translate-by-data-attr.js
+			if (categoryTranslation[text] && categoryTranslation[text][_userLang])
+				return categoryTranslation[text][_userLang];
+			if (textTranslationMapping[text] && textTranslationMapping[text][_userLang])
+				return textTranslationMapping[text][_userLang];
+			return text;
+		}
+
+		const cururl = new URL(window.location.href);
+		const curparams = new URLSearchParams(cururl.search);
+		const isDev = document.URL.startsWith('https://static.dev.deledao.com');
+
+		let blockedUrl = decodeURIComponent(curparams.get("site"));
+
+		try {
+			let blockedUrlSplittedByDot = blockedUrl.split('.');
+			if (blockedUrlSplittedByDot.length > 0) {
+				blockedUrlSplittedByDot[0] += ' ';
+				blockedUrl = blockedUrlSplittedByDot.join('.').trim();
+			}
+		}
+		catch (err) { }
+
+		if (blockedUrl && blockedUrl.length >= 256)
+			blockedUrl = blockedUrl.substring(0, 256) + "...";
+
+		let websiteElement = document.getElementById("website");
+		if (websiteElement)
+			websiteElement.innerText = blockedUrl;
+
+		let categoryParameter = curparams.get("category");
+		if (categoryParameter) {
+			let categorySpliitedByComma = categoryParameter.split(',');
+			let categoryText = [];
+			for (let i = 0; i < categorySpliitedByComma.length; i++) {
+				let splittedByParenthesis = categorySpliitedByComma[i].split(' (');
+				let category = splittedByParenthesis[0].trim();
+				let suffix = '';
+				if (isDev)
+					suffix = ` (only for dev -> ${splittedByParenthesis[1]})` || '';
+				categoryText.push(_getTranslationText(category) + _getTranslationText(suffix));
+			}
+			let categoryElement = document.getElementById("category");
+			if (categoryElement)
+				categoryElement.innerText = categoryText.join(', ');
+		}
+		let cnameElement = document.getElementById("cname");
+		if (cnameElement)
+			cnameElement.innerText = curparams.get("cname");
+
+		let title = curparams.get("title");
+		if (title) document.title = _getTranslationText("Blocked: ") + title;
+		else if (blockedUrl)
+			document.title = _getTranslationText("Blocked: ") + blockedUrl.substring(0, 80);
+
+		let policy = _getTranslationText("school");
+		let byParent = false;
+		let policyGroup = curparams.get("pgroup");
+		if (policyGroup) {
+			if (policyGroup === "school") {
+				policy = _getTranslationText("school");
+			} else if (policyGroup === "parent") {
+				policy = _getTranslationText("parent");
+				byParent = true;
+			} else if (policyGroup === "classroom") {
+				policy = _getTranslationText("classroom");
+			}
+		} else {
+			if (curparams.get("parent") === "true") {
+				policy = _getTranslationText("parent");
+				byParent = true;
+			} else {
+				policy = _getTranslationText("school");
+			}
+		}
+		let blocksrcElement = document.getElementById("blocksrc");
+		if (blocksrcElement)
+			blocksrcElement.innerText = policy;
+
+		let vendor = curparams.get("vendor");
+		if (vendor === 'hapara') {
+			let vendorElement = document.getElementById("vendor");
+			if (vendorElement)
+				vendorElement.innerText = 'Hāpara';
+			let footerElement = document.getElementById("footer");
+			if (footerElement)
+				footerElement.style.display = "none";
+		}
+
+		let nodwl = curparams.get("nodwl");
+		if (nodwl) {
+			let nodwlElement = document.getElementById("nodwl");
+			if (nodwlElement)
+				nodwlElement.style.display = "block";
+		} else if (byParent) {
+			let parentblockElement = document.getElementById("parentblock");
+			if (parentblockElement)
+				parentblockElement.style.display = "block";
+		} else {
+			let dynWLformElement = document.getElementById("dynWLform");
+			if (dynWLformElement)
+				dynWLformElement.style.display = "block";
+			let antiDynWLformElement = document.getElementById("antiDynWLform");
+			if (antiDynWLformElement)
+				antiDynWLformElement.style.display = "none";
+		}
+
+		// allowed list
+		let isallow = document.getElementById("isallowed");
+		let allowedStr = curparams.get("allowed");
+		if (isallow) {
+			if (allowedStr) {
+				allowedStr = decodeURIComponent(allowedStr);
+
+				let allowedList = allowedStr.split(",");
+				let ul = document.getElementById("allowedlist");
+				if (ul) {
+					for (let i = 0; i < allowedList.length; i++) {
+						let li = document.createElement("li");
+						li.appendChild(document.createTextNode(allowedList[i]));
+						ul.appendChild(li);
+					}
+				}
+				isallow.style.display = "block";
+			}
+			else
+				isallow.style.display = "none";
+		}
+
+		let bgColor = curparams.get("bgColor");
+		if (bgColor) {
+			let body = document.body;
+			if (body)
+				body.style.backgroundColor = bgColor;
+		}
+
+		let backToSiteBtn = document.getElementById("backToSite");
+		if (backToSiteBtn && isDev) {
+			backToSiteBtn.style.display = 'block';
+			backToSiteBtn.onclick = () => {
+				location.replace(decodeURIComponent(curparams.get("site")));
+			};
+		}
+	</script>
+
+
+</body>
+
+</html>
