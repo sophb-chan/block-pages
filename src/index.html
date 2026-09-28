@@ -26,7 +26,8 @@
 		<a href="https://school-internet-censorship.vercel.app">School Internet Censorship</a>
 		<a href="https://school-induced-censorship.vercel.app">School-induced Censorship</a>
 		<a href="https://this-page-is-blocked-by-your-school.vercel.app">This page is blocked by your school.</a>
-		<a href="https://this-page-is-not-blocked-by-your-school.vercel.app">This page is NOT blocked by your school!</a>
+		<a href="https://this-page-is-not-blocked-by-your-school.vercel.app">This page is NOT blocked by your
+			school!</a>
 	</div>
 
 	<style>
@@ -46,11 +47,11 @@
 		}
 	</style>
 	<script>
-						const mirrors = document.querySelectorAll('.mirror-list a[href]');
+		const mirrors = document.querySelectorAll('.mirror-list a[href]');
 
-		for (const mirror of mirrors) {
-			if (a.href === location.protocol + '//' + location.hostname)
-				a.textContent += ' (You are here!)';
+		for (const mirrorLink of mirrors) {
+			if (mirrorLink.href === location.protocol + '//' + location.hostname)
+				mirrorLink.textContent += ' (You are here!)';
 		}
 	</script>
 </body>
