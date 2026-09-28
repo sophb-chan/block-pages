@@ -5,10 +5,51 @@ body {
 
 body {
 	text-align: center;
+	font-family: monospace;
 }
 
 .block-pages,
 .mirror-list {
 	display: flex;
 	flex-direction: column;
+}
+
+a[href] {
+	color: #00f;
+}
+
+a[href]:hover {
+	color: #66f;
+	font-weight: bold;
+}
+
+a[href]:visited {
+	color: #f00;
+}
+
+a[href]:visited:hover {
+	color: #f66;
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background: #102;
+		color: #fff;
+	}
+
+	a[href] {
+		color: #64f;
+	}
+
+	a[href]:hover {
+		color: #76f;
+	}
+
+	a[href]:visited {
+		color: #f04;
+	}
+
+	a[href]:visited:hover {
+		color: #f48;
+	}
 }
