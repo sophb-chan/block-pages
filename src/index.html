@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Block Pages</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -14,11 +15,16 @@
 		These pages will contain placeholders where private and/or variable information
 		(e.g. school district, website URL) would normally go.
 	</p>
+
 	<hr>
+
 	<div class="block-pages">
-		<a href="/chrome">Chrome: "Your organization does not allow you to view this site"</a>
-		<a href="/aristotleK12">AristotleK12: "This page has been blocked"</a>
+		<a href="/chrome">Chrome</a>
+		<a href="/aristotleK12">AristotleK12</a>
+		<a href="/linewize">Linewize</a>
+		<a href="/linewize-fallback">Linewize (Fallback)</a>
 	</div>
+
 	<h2>Mirrors</h2>
 	<div class="mirror-list">
 		<a href="https://school-block-pages.vercel.app">School Block Pages</a>
@@ -30,30 +36,9 @@
 			school!</a>
 	</div>
 
-	<style>
-		html,
-		body {
-			margin: 0;
-		}
-
-		body {
-			text-align: center;
-		}
-
-		.block-pages,
-		.mirror-list {
-			display: flex;
-			flex-direction: column;
-		}
-	</style>
-	<script>
-		const mirrors = document.querySelectorAll('.mirror-list a[href]');
-
-		for (const mirrorLink of mirrors) {
-			if (new URL(mirrorLink.href).hostname === location.hostname)
-				mirrorLink.textContent += ' (You are here!)';
-		}
-	</script>
+	<hr>
+	<p>Check out the source code for this site @ <a href="https://github.com/sophb-chan/block-pages">sophb-chan/block-pages</a></p>
+	<script src="script.js"></script>
 </body>
 
 </html>
