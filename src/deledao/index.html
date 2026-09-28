@@ -1,8 +1,10 @@
 <html lang="en">
 
 <head>
+	<script>if (!location.href.endsWith('/')) location.href += '/'</script>
+
 	<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="./css/dld.css?v=260130">
+	<link rel="stylesheet" type="text/css" href="./default/css/dld.css">
 	<script src="./translate-by-data-attr.js"></script>
 	<script src="./category-translation.js"></script>
 	<title>Blocked: https://example.com/</title>
@@ -11,7 +13,7 @@
 <body>
 	<div class="wrapper">
 		<header style="padding: 20px;">
-			<img style="width: 180px;" src="./images/logo.svg" alt="logo picture">
+			<img style="width: 180px;" src="./default/images/logo.svg" alt="logo picture">
 			<h1 id="cname">Example School</h1>
 		</header>
 
@@ -19,7 +21,7 @@
 
 		<div class="mainFrame" style="min-width: 300px">
 			<h2>
-				<img src="./images/computerSmall.png" alt="a computer icon">
+				<img src="./default/images/computerSmall.png" alt="a computer icon">
 				<span style="color: #e8425a; vertical-align: 50%" d-trans-en="&nbsp;&nbsp;Oops…"
 					d-trans-zh-tw="&nbsp;&nbsp;哎呀…">&nbsp;&nbsp;Oops…</span>
 			</h2>
@@ -131,169 +133,6 @@
 		d-trans-zh-tw="&lt;b&gt; Copyright © &lt;span class=&quot;year-insert&quot;&gt;&lt;/span&gt; &lt;/b&gt; DLD Technologies Corporation doing business as Deledao. 保留一切權利。">
 		Copyright © <span class="year-inserted">2026</span> DLD Technologies Corporation doing business as Deledao. All
 		rights reserved.</div>
-
-	<script>
-		// translateElemnt() from translate-by-data-attr.js
-		translateElemnt();
-		let textTranslationMapping = {
-			'school': { en: 'School', 'zh-TW': '學校' },
-			'parent': { en: 'Parent', 'zh-TW': '家長' },
-			'classroom': { en: 'Classroom', 'zh-TW': '課堂' },
-			'Blocked: ': { en: 'Blocked: ', 'zh-TW': '封鎖: ' }
-		};
-		let _userLang = navigator.language || navigator.userLanguage;
-		if (_userLang !== 'zh-TW')
-			_userLang = 'en';
-
-		document.documentElement.lang = _userLang;
-
-		function _getTranslationText(text) {
-			// categoryTranslation from translate-by-data-attr.js
-			if (categoryTranslation[text] && categoryTranslation[text][_userLang])
-				return categoryTranslation[text][_userLang];
-			if (textTranslationMapping[text] && textTranslationMapping[text][_userLang])
-				return textTranslationMapping[text][_userLang];
-			return text;
-		}
-
-		const cururl = new URL(window.location.href);
-		const curparams = new URLSearchParams(cururl.search);
-		const isDev = document.URL.startsWith('https://static.dev.deledao.com');
-
-		let blockedUrl = decodeURIComponent(curparams.get("site"));
-
-		try {
-			let blockedUrlSplittedByDot = blockedUrl.split('.');
-			if (blockedUrlSplittedByDot.length > 0) {
-				blockedUrlSplittedByDot[0] += ' ';
-				blockedUrl = blockedUrlSplittedByDot.join('.').trim();
-			}
-		}
-		catch (err) { }
-
-		if (blockedUrl && blockedUrl.length >= 256)
-			blockedUrl = blockedUrl.substring(0, 256) + "...";
-
-		let websiteElement = document.getElementById("website");
-		if (websiteElement)
-			websiteElement.innerText = blockedUrl;
-
-		let categoryParameter = curparams.get("category");
-		if (categoryParameter) {
-			let categorySpliitedByComma = categoryParameter.split(',');
-			let categoryText = [];
-			for (let i = 0; i < categorySpliitedByComma.length; i++) {
-				let splittedByParenthesis = categorySpliitedByComma[i].split(' (');
-				let category = splittedByParenthesis[0].trim();
-				let suffix = '';
-				if (isDev)
-					suffix = ` (only for dev -> ${splittedByParenthesis[1]})` || '';
-				categoryText.push(_getTranslationText(category) + _getTranslationText(suffix));
-			}
-			let categoryElement = document.getElementById("category");
-			if (categoryElement)
-				categoryElement.innerText = categoryText.join(', ');
-		}
-		let cnameElement = document.getElementById("cname");
-		if (cnameElement)
-			cnameElement.innerText = curparams.get("cname");
-
-		let title = curparams.get("title");
-		if (title) document.title = _getTranslationText("Blocked: ") + title;
-		else if (blockedUrl)
-			document.title = _getTranslationText("Blocked: ") + blockedUrl.substring(0, 80);
-
-		let policy = _getTranslationText("school");
-		let byParent = false;
-		let policyGroup = curparams.get("pgroup");
-		if (policyGroup) {
-			if (policyGroup === "school") {
-				policy = _getTranslationText("school");
-			} else if (policyGroup === "parent") {
-				policy = _getTranslationText("parent");
-				byParent = true;
-			} else if (policyGroup === "classroom") {
-				policy = _getTranslationText("classroom");
-			}
-		} else {
-			if (curparams.get("parent") === "true") {
-				policy = _getTranslationText("parent");
-				byParent = true;
-			} else {
-				policy = _getTranslationText("school");
-			}
-		}
-		let blocksrcElement = document.getElementById("blocksrc");
-		if (blocksrcElement)
-			blocksrcElement.innerText = policy;
-
-		let vendor = curparams.get("vendor");
-		if (vendor === 'hapara') {
-			let vendorElement = document.getElementById("vendor");
-			if (vendorElement)
-				vendorElement.innerText = 'Hāpara';
-			let footerElement = document.getElementById("footer");
-			if (footerElement)
-				footerElement.style.display = "none";
-		}
-
-		let nodwl = curparams.get("nodwl");
-		if (nodwl) {
-			let nodwlElement = document.getElementById("nodwl");
-			if (nodwlElement)
-				nodwlElement.style.display = "block";
-		} else if (byParent) {
-			let parentblockElement = document.getElementById("parentblock");
-			if (parentblockElement)
-				parentblockElement.style.display = "block";
-		} else {
-			let dynWLformElement = document.getElementById("dynWLform");
-			if (dynWLformElement)
-				dynWLformElement.style.display = "block";
-			let antiDynWLformElement = document.getElementById("antiDynWLform");
-			if (antiDynWLformElement)
-				antiDynWLformElement.style.display = "none";
-		}
-
-		// allowed list
-		let isallow = document.getElementById("isallowed");
-		let allowedStr = curparams.get("allowed");
-		if (isallow) {
-			if (allowedStr) {
-				allowedStr = decodeURIComponent(allowedStr);
-
-				let allowedList = allowedStr.split(",");
-				let ul = document.getElementById("allowedlist");
-				if (ul) {
-					for (let i = 0; i < allowedList.length; i++) {
-						let li = document.createElement("li");
-						li.appendChild(document.createTextNode(allowedList[i]));
-						ul.appendChild(li);
-					}
-				}
-				isallow.style.display = "block";
-			}
-			else
-				isallow.style.display = "none";
-		}
-
-		let bgColor = curparams.get("bgColor");
-		if (bgColor) {
-			let body = document.body;
-			if (body)
-				body.style.backgroundColor = bgColor;
-		}
-
-		let backToSiteBtn = document.getElementById("backToSite");
-		if (backToSiteBtn && isDev) {
-			backToSiteBtn.style.display = 'block';
-			backToSiteBtn.onclick = () => {
-				location.replace(decodeURIComponent(curparams.get("site")));
-			};
-		}
-	</script>
-
-
 </body>
 
 </html>
