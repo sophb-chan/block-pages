@@ -5,3 +5,7 @@ html, body {
 body {
 	text-align: center;
 }
+.block-pages {
+	display: flex;
+	flex-direction: column;
+}
