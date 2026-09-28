@@ -8,7 +8,7 @@ html {
 }
 
 .background {
-	background-image: url(./static/media/background.svg);
+	background-image: url(../media/background.svg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 100vh;
