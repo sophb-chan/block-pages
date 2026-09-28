@@ -1,6 +1,7 @@
 # How to Contribute
 
 If you want a block page to be hosted here, there are 2 ways you can make it happen:
+
 1. By creating a pull request
 2. By opening an issue
 
