@@ -10,8 +10,10 @@
 <body>
 	<h1>Block Page Demos</h1>
 
-	<p><b>NOTICE</b>: These pages will contain placeholders where private information (e.g. school district,
-		country/location) would normally go.</p>
+	<p><b>NOTICE</b>:
+		These pages will contain placeholders where private and/or variable information
+		(e.g. school district, website URL) would normally go.
+	</p>
 	<hr>
 	<div class="block-pages">
 		<a href="/chrome">Chrome: "Your organization does not allow you to view this site"</a>
@@ -44,7 +46,8 @@
 		}
 	</style>
 	<script>
-		const mirrors = document.querySelector('.mirror-list a[href]');
+						const mirrors = document.querySelectorAll('.mirror-list a[href]');
+
 		for (const mirror of mirrors) {
 			if (a.href === location.hostname)
 				a.textContent += ' (You are here!)';
