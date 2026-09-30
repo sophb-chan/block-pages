@@ -1,0 +1,18 @@
+{
+  "name": "block-pages",
+  "version": "1.0.0",
+  "description": "Dummy School Block Pages",
+  "scripts": {
+    "test": "echo \"No tests specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sophb-chan/block-pages.git"
+  },
+  "keywords": ["block-pages", "school", "censorship"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/analytics": "^1.3.1"
+  }
+}
