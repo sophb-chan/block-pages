@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+	<script>if (!location.href.endsWith('/')) location.href += '/'</script>
+
+	<title>Content Blocked by Linewize</title>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="shortcut icon" href="favicon.svg">
+	<link rel="apple-touch-icon" href="favicon.svg">
+	<link href="./static/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+	<div id="root">
+		<div class="background">
+			<div class="header"><img src="./static/media/logo.svg" class="logo" alt="Linewize Logo">
+				<div class="logout"></div>
+			</div>
+			<div class="container">
+				<img src="./static/media/blocked.svg" alt="Blocked" />
+				<h1 class="title">Content Blocked</h1>
+				<div class="subtitle">
+					Access to
+					<span class="subtitleEmphasis">
+						example.com
+					</span>
+					has been blocked
+				</div>
+
+				<a class="plainLink" href="#" style="margin-top: 16px;">
+					<div class="button button-light">See why it's blocked</div>
+				</a>
+			</div>
+		</div>
+		<script>
+			document.querySelector('#root .container .plainLink').addEventListener('click', () => {
+				document.querySelector('#root .container').innerHTML =
+					`
+					<div class="spinner detailSpinner" alt="Loading..."></div>
+					<div class="downvoteText">
+						If you believe this site has been incorrectly blocked,
+						<br>
+						you can
+						<span class="link">
+							report it to your administrator
+						</span>
+					</div>
+				`;
+			}, { once: true });
+		</script>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+	======== Note ========
+	This was taken from https://aristotlek12.vercel.app/.
+
+	The source code has been tweaked slightly,
+		and the comments in the original source code hosted
+		in the Vercel page listed above indicate that this was
+		vibecoded.
+-->
+<head>
+	<link rel="icon" type="image/png" href="mtm.png">
+	<meta charset="UTF-8">
+	<title>Page Blocked</title>
+	<style>
+		html {
+			font-size: 14px;
+		}
+
+		body {
+			font-size: 100% !important;
+		}
+
+		body {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 500px;
+			height: 254px;
+			margin: -151px 0px 0px -254px;
+			background: rgb(0, 50, 160);
+			text-align: center;
+			color: white;
+			font-size: 14px;
+			font-family: sans-serif;
+		}
+
+		h1 {
+			margin-bottom: 50px;
+		}
+
+		#block-title {
+			font-size: large;
+			color: inherit;
+		}
+
+		#block-div {
+			margin-bottom: 20px;
+		}
+
+		#description {
+			font-size: medium;
+			color: inherit;
+		}
+
+		#custom-description {
+			font-size: small;
+			color: inherit;
+		}
+
+		#review-btn {
+			background-color: #efefef;
+			/* Light gray */
+			color: black;
+			border: 2px outset #767676;
+			padding: 2px 8px;
+			font-size: 13px;
+			font-family: Arial, sans-serif;
+			cursor: pointer;
+			border-radius: 2px;
+		}
+
+		#review-btn:active {
+			border-style: inset;
+		}
+	</style>
+</head>
+
+<body>
+	<h1 id="block-title">
+		<div><br></div>This page has been blocked
+	</h1>
+	<div id="block-div">
+		<p id="description">
+			The website you are attempting to reach has been blocked by an administrator.<br>
+			If you believe this was done in error, please request a review of the website.
+		</p>
+		<button id="review-btn">Request Site Review</button>
+	</div>
+	<div>
+		<p id="custom-description">
+			If you feel you&nbsp;have reached this message in error please submit a request to your teacher to have the
+			page unblocked.&nbsp;
+		</p>
+		<div><br></div>
+		<div><u>School Name</u>, Office of Information Technology</div>
+		<p></p>
+	</div>
+
+	<script>
+		document.getElementById("review-btn").addEventListener("click", function () {
+			// This (↓) is probably not part of the original screen.
+			// console.log("AristotleK12: Review request pushed.");
+			// If this log is present in the real screen, please open a GitHub issue about it.
+
+			this.remove();
+			const status = document.createElement("p");
+			status.innerHTML = "<b>Request Sent!</b>";
+			status.style.fontSize = "16px";
+			status.style.marginTop = "10px";
+			document.getElementById("block-div").appendChild(status);
+		});
+
+		document.onkeydown = function (e) {
+			e.preventDefault();
+			return false;
+		};
+	</script>
+</body>
+
+</html>

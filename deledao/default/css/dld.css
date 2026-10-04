@@ -1,0 +1,321 @@
+html,
+body {
+	font-family: Helvetica;
+	font-style: normal;
+	font-size: 14px;
+	height: 100%;
+	margin: 0;
+}
+
+.mainFrame {
+	width: 43%;
+	margin: auto;
+	margin-top: 60px;
+	line-height: 22px;
+	letter-spacing: 0.02em;
+	font-stretch: 100%;
+}
+
+.wrapper {
+	min-height: 100%;
+
+	/* Equal to height of footer */
+	/* But also accounting for potential margin-bottom of last child */
+	margin-bottom: -40px;
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 20px;
+}
+
+header img {
+	margin: auto 30px auto 20px;
+	width: 180px;
+}
+
+header h1#cname {
+	font-size: 32px;
+	font-weight: bold;
+	color: #5b5959;
+	margin: 0 auto;
+}
+
+.headerline {
+	border-color: #2c7bd1;
+}
+
+.title {
+	font-size: 22px;
+	font-weight: bold;
+	letter-spacing: 0.02em;
+}
+
+.objectGroup {
+	position: relative;
+}
+
+.heading {
+	font-weight: 600;
+}
+
+.sameBox {
+	position: absolute;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.okMsg {
+	color: #41ad49;
+}
+
+.errorMsg {
+	color: #ea446a;
+}
+
+.normalMsg {
+	color: #000000;
+}
+
+#url {
+	width: 100%;
+	height: 35px !important;
+	padding-left: 11px;
+	padding-right: 78px;
+	border-radius: 16px;
+	background: #fff;
+	border: solid 1.5px #fcc700;
+	font-size: 15px;
+}
+
+#url:focus {
+	outline: none;
+}
+
+#go {
+	-webkit-tap-highlight-color: transparent;
+	background-color: #fcc700;
+	border: none;
+	border-radius: 12px;
+	width: 65px !important;
+	height: 25px !important;
+	float: right;
+	right: 6px !important;
+	top: 5px !important;
+	vertical-align: middle;
+}
+
+#go:focus {
+	outline: none;
+}
+
+#screenshot {
+	border: solid 1.5px #fcc700;
+	width: 100%;
+}
+
+#statusGroup {
+	padding-top: 50px;
+	text-align: center;
+}
+
+p+ol {
+	margin-top: -15px;
+}
+
+.form-signin #inputEmail,
+.form-signin #inputPassword {
+	direction: ltr;
+	height: 44px;
+	font-size: 16px;
+}
+
+.form-signin select[id=selectName],
+.form-signin input[type=email],
+.form-signin input[type=password],
+.form-signin input[type=text] {
+	display: block;
+	margin: auto;
+	margin-bottom: 10px;
+	padding-left: 8px;
+	width: 280px;
+	height: 30px;
+	border-radius: 6px;
+	position: relative;
+	font-family: Helvetica;
+	border: solid 0.5px;
+}
+
+.form-signin .form-control:focus {
+	outline: none;
+}
+
+.form-signin textarea {
+	width: 99%;
+	height: 180px;
+	border-radius: 6px;
+}
+
+textarea::-webkit-input-placeholder {
+	font-family: Helvetica;
+}
+
+button:disabled,
+button[disabled] {
+	background-color: #cccccc;
+}
+
+button {
+	display: block;
+	width: 80px;
+	height: 30px;
+	margin: auto;
+	margin-top: 10px;
+	align: middle;
+	border: none;
+	border-radius: 6px;
+	background-color: #fcc700;
+	font-family: Helvetica;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.gsuitesignin {
+	display: block;
+	width: 260px;
+	height: 30px;
+	margin: auto;
+	margin-top: 40px;
+	align: center;
+	border-radius: 6px;
+	background-color: #fcc700;
+	font-family: Helvetica;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.select-item {
+	width: 100%;
+	height: 30px;
+	display: block;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	position: relative;
+	border-radius: 6px;
+}
+
+.hidden {
+	display: none;
+}
+
+#cname {
+	display: block;
+	font-size: 32px;
+	font-weight: bold;
+	text-decoration: none;
+	margin-left: 28.5%;
+	margin-top: -50px;
+}
+
+h2 {
+	font-size: 28px;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 26px;
+	font-weight: bold;
+}
+
+h5 {
+	font-size: 16px;
+	/*    font-weight:bold;*/
+}
+
+#subtitle {
+	font-weight: bold;
+}
+
+#signinform {
+	display: none;
+}
+
+.push,
+.footer {
+	margin: auto;
+	bottom: 0;
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	font-size: 12px;
+}
+
+#website {
+	text-decoration: underline;
+	word-break: break-all;
+}
+
+
+/* For static pages: Create two equal columns that floats next to each other */
+.column {
+	float: left;
+	width: 320px;
+	white-space: nowrap;
+	overflow: visible;
+}
+
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* --------------------------------------------------
+   RWD — Tablet (≤ 900px)
+-------------------------------------------------- */
+@media screen and (max-width: 900px) {
+
+	header h1#cname {
+		font-size: 26px;
+		margin: 0 auto;
+	}
+}
+
+/* --------------------------------------------------
+   RWD — Mobile (≤ 640px)
+-------------------------------------------------- */
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 640px) {
+	.column {
+		width: 320px;
+	}
+
+	.row {
+		width: 320px;
+	}
+
+	header img {
+		width: 42px;
+		height: 42px;
+		margin: auto 20px auto 10px;
+		object-fit: cover;
+		object-position: left;
+	}
+
+	header h1#cname {
+		font-size: 20px;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (min-width: 640px) {
+	.row {
+		width: 640px;
+	}
+}

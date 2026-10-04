@@ -1,0 +1,91 @@
+<html lang="en">
+
+<head>
+	<script>if (!location.href.endsWith('/')) location.href += '/'</script>
+
+	<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="./default/css/dld.css">
+	<title>Blocked: https://example.com/</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header style="padding: 20px;">
+			<img style="width: 180px;" src="./default/images/logo.svg" alt="logo picture">
+			<h1 id="cname">School Name</h1>
+		</header>
+
+		<hr style="clear: left; border-color: #2c7bd1">
+
+		<div class="mainFrame" style="min-width: 300px">
+			<h2>
+				<img src="./default/images/computerSmall.png" alt="a computer icon">
+				<span style="color: #e8425a; vertical-align: 50%">&nbsp;&nbsp;Oops…</span>
+			</h2>
+
+			<div class="notice">
+				<p>
+					There’s nothing to see here.
+					Your <b>School</b> thinks you should explore a different part of the web at this time.
+				</p>
+				<p>
+					<span id="subtitle">Website:</span><br>
+					<span id="website" style="word-wrap: break-word; text-decoration: none;">
+						https://example.com/
+					</span>
+					<br>
+					<span id="subtitle">Category:</span>
+					<br>
+					<span id="category">Example</span>
+				</p>
+
+				<div id="dynWLform" style="display: none">
+					<p>
+						<b>
+							If you need to access this website for your coursework:
+						</b>
+					</p>
+					<button id="unblockreq"
+						style="margin-left: 0px;
+							width: 230px;
+							height: 36px;
+							border-radius: 8px;
+							color: black;
+							font-size: 17px;"
+					>
+						Ask to unblock
+					</button>
+				</div>
+				<div id="antiDynWLform" style="display: block">
+					<p>
+						<b>
+							This webpage is not allowed to be unblocked by teachers.
+						</b>
+					</p>
+					<button disabled="" style="margin-left: 0px;
+							width: 230px;
+							height: 36px;
+							border-radius: 8px;
+							color: black;
+							font-size: 17px;">
+						Ask to unblock
+					</button>
+				</div>
+				<p id="nodwl" style="display: block; margin-top: 30px;">
+					<i>
+						If you have questions or concerns about the use of this
+						software on your device, please contact your teacher.
+					</i>
+				</p>
+			</div>
+		</div>
+		<div class="push"></div>
+	</div>
+	<div class="footer" style="display: none;" id="footer">
+		Copyright © <span class="year-inserted">20XX</span>
+		DLD Technologies Corporation doing business as Deledao.
+		All rights reserved.
+	</div>
+</body>
+
+</html>
