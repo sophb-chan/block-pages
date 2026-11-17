@@ -5,7 +5,10 @@ This document lists placeholder values for private and/or variable information i
 ## Values
 
 - **School District / Name**: School Name
+- **Username**: John Student
 - **Blocked URL**: example.com
+- **Block Group / Severity**: Low Severity
+- **Block Reason**: Website is an example
 - **Content Category**: Example
 - **E-mail Address**: <email@example.com>
 - **IP Address**: 127.0.0.1
